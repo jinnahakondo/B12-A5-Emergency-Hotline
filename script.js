@@ -59,7 +59,8 @@ for (const callBtn of callBtns) {
         alert(`calling ${serviceName} ${ServiceNumber}......`)
 
         // history 
-        let time = new Date().toLocaleTimeString;
+        let time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        console.log(time)
         const div = document.createElement("div");
         div.classList.add("history-box");
         div.innerHTML = `
@@ -70,7 +71,7 @@ for (const callBtn of callBtns) {
                     </div>
                     <!-- right side time  -->
                     <div>
-                        <p>11:36:58 AM</p>
+                        <p>${time}</p>
                     </div>
         `;
         document.getElementById("history-box").prepend(div)
