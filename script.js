@@ -36,12 +36,36 @@ for (const callBtn of callBtns) {
         let newTotalCoin = totalCoin - 20;
         document.getElementById("total-coin").innerText = newTotalCoin;
 
-         // calling alert 
+        // calling alert 
         let card = this.closest(".card")
-        console.log(card)
+
+        // console.log(card)
         let serviceName = card.querySelector(".servic-name").innerText;
         let ServiceNumber = card.querySelector(".number").innerText;
         alert(`calling ${serviceName} ${ServiceNumber}......`)
+
+        // history 
+        let time = new Date().toLocaleTimeString;
+        const div = document.createElement("div");
+        div.classList.add("history-box");
+        div.innerHTML = `
+        <!-- left side  -->
+                    <div>
+                        <h4 class="service-title">${serviceName}</h4>
+                        <p class="service-number">${ServiceNumber}</p>
+                    </div>
+                    <!-- right side time  -->
+                    <div>
+                        <p>11:36:58 AM</p>
+                    </div>
+        `;
+        document.getElementById("history-box").prepend(div)
     })
 
 }
+
+// clear history
+document.getElementById("clear-btn").addEventListener("click",()=>{
+let historyBox = document.getElementById("history-box");
+historyBox.innerHTML="";
+})
