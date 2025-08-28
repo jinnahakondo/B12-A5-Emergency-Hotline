@@ -1,26 +1,37 @@
 @media (min-width:1024px) {
-     .manubar{
+    .manubar {
         display: none !important;
     }
-   }
+}
 
-   .heart-icon{
+.heart-icon {
     cursor: pointer;
-   }
+}
 
 
-   .history-box{
-  display: flex;                
-  justify-content: space-between; 
-  align-items: center;          
-  background-color: #FAFAFA; 
-  padding: 1rem;               
-  border-radius: 0.75rem;      
-  margin-bottom: 1.25rem;  
+.history-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FAFAFA;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
 }
-.service-title{
-   font-weight: bold;
+
+.service-title {
+    font-weight: bold;
 }
-.service-number{
+
+.service-number {
     color: gray;
+}
+
+button:hover {
+    background: rgb(1, 1, 31);
+    color: white;
+}
+
+button:active {
+    background-color: gray;
 }

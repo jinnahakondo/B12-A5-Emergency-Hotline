@@ -22,8 +22,22 @@ for (const icon of icons) {
 
 }
 
-
-// call button acction 
+// copy button 
+const copyBtns = document.querySelectorAll(".copy-btn");
+let copyCount = 0;
+for (const copyBtn of copyBtns) {
+    copyBtn.addEventListener("click", async function () {
+        copyCount++;
+        let totalCopy = document.getElementById("copy-btn");
+        totalCopy.innerText = copyCount;
+        // number access 
+        let card = this.closest(".card");
+        let ServiceNumber = card.querySelector(".number").innerText;
+        await navigator.clipboard.writeText(ServiceNumber)
+        alert(`${ServiceNumber} Copyed!`)
+    })
+}
+// call button 
 const callBtns = document.querySelectorAll(".call-btn");
 for (const callBtn of callBtns) {
     callBtn.addEventListener("click", function () {
@@ -65,7 +79,7 @@ for (const callBtn of callBtns) {
 }
 
 // clear history
-document.getElementById("clear-btn").addEventListener("click",()=>{
-let historyBox = document.getElementById("history-box");
-historyBox.innerHTML="";
+document.getElementById("clear-btn").addEventListener("click", () => {
+    let historyBox = document.getElementById("history-box");
+    historyBox.innerHTML = "";
 })
