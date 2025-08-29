@@ -35,6 +35,12 @@ for (const copyBtn of copyBtns) {
         let ServiceNumber = card.querySelector(".number").innerText;
         await navigator.clipboard.writeText(ServiceNumber)
         alert(`${ServiceNumber} Copyed!`)
+        copyBtn.disabled = true;
+        copyBtn.innerHTML = `<i class="fa-regular fa-copy"></i> Copyed!`;
+        setTimeout(() => {
+            copyBtn.disabled = false;
+            copyBtn.innerHTML = `<i class="fa-regular fa-copy"></i> Copy`;
+        }, 1500);
     })
 }
 // call button 
@@ -59,7 +65,7 @@ for (const callBtn of callBtns) {
         alert(`calling ${serviceName} ${ServiceNumber}......`)
 
         // history 
-        let time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        let time = new Date().toLocaleTimeString();
         console.log(time)
         const div = document.createElement("div");
         div.classList.add("history-box");
